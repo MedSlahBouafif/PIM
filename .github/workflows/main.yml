@@ -41,7 +41,7 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
         
       - name: Build Docker image
-        run: docker build . --file Dockerfile --tag medslah/pim:${{steps.version.outputs.tag}}
+        run: docker build . --file Dockerfile --tag medslah12/pim:${{steps.version.outputs.tag}}
         
       - name: Push to Docker Hub
-        run: docker push medslah/pim:${{steps.version.outputs.tag}}
+        run: docker push medslah12/pim:${{steps.version.outputs.tag}}
